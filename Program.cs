@@ -9,18 +9,26 @@ namespace PrimeSifting
     {
       Console.WriteLine("Welcome to Prime Number Sifting!");
       Console.WriteLine("We'll return all the prime numbers between two to the provided numbers.");
-      isNumber();
+      int providedNumber = IsNumber();
+      var primes = Prime.GetPrimes(providedNumber);
+      var result = string.Join(",", primes);
+      Console.WriteLine($"Here are the prime numbers: {result}");
     }
 
-    public static int isNumber()
+    public static int IsNumber()
     {
-        Console.WriteLine("Please enter a number");
       int number = 0;
+      Console.WriteLine("Please enter a positive whole number bigger than 1.");
       bool userInput = Int32.TryParse(Console.ReadLine(), out number);
       if(!userInput)
       {
-        Console.WriteLine("\nPlease enter a number!");
-        return isNumber();
+        Console.WriteLine("\nWe only accept a number.");
+        return IsNumber();
+      }
+      if (number <= 1)
+      {
+        Console.WriteLine("\nWe only accept a number bigger than 2.");
+        return IsNumber();
       }
       return number;
     }
