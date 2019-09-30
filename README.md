@@ -4,6 +4,7 @@
 
 ## Description
 Create a console application which given a number, write a method that returns all of the prime numbers less than that number.
+Prime number is a whole number greater than 1 and that can only be divided by itself.
 
 ## About this Application:
 I used the Sieve of Eratosthenes to solve this.
@@ -19,6 +20,14 @@ Here is how the Sieve of Eratosthenes works to find a number up to a given numbe
 Here is the reference: <br>
 YouTube - [Prime Numbers - Sieve of Eratosthenes by 
 Region 10 ESC](https://www.youtube.com/watch?v=V08g_lkKj6Q)
+
+## Specs
+| Spec | Input | Output |
+| :-------------     | :------------- | :------------- |
+| **Return prime numbers from 2 to input number** | 10 | 2, 3, 5, 7 |
+| **Ask number again when user types less than 1** | -5 | "We only accept a number bigger than 2. Please enter a positive whole number bigger than 1." |
+| **Ask number again when user gives non-numeric input**| "Hello" | "We only accept a number. Please enter a positive whole number bigger than 1." |
+</br>
 
 ## Setup/Installation Requirements
 
