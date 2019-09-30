@@ -1,27 +1,38 @@
-using System;
 using System.Collections.Generic;
 
 namespace PrimeSifting.Models
 {
-  class Number
+  class Prime
   {
-    public static void SelectPrime(int inputNumber)
+    public static List<int> GetPrimes(int number)
     {
-      List<int> numbers = new List<int> {};
-      // make a list from 2 to inputNumber
-      for (int i = 2; i <= inputNumber; i++)
-      {
-        numbers.Add(i);
-      }
+      // create a list of integers based on the inputNumber
+      // List<int> numbers = new List<int>();
+      // for (int i = 2; i <= number; i++)
+      // {
+      //   numbers.Add(i);
+      // }
 
-      // Loop through prime number
-      for(int j = 2; j < inputNumber; j++)
+      // loop through each numbers in the list, adding each prime number to Primes
+      List<int> primes = new List<int>();
+      bool isPrime = true;
+      for(int i = 2; i <= number; i++)
       {
-        if(numbers[j - 2] % j != 0)
+        for (int j = 2; j <= number; j++)
         {
-          numbers.Remove(j);
+          if ( i != j && i % j == 0)
+          {
+            isPrime = false;
+            break;
+          }
         }
+        if (isPrime)
+        {
+          primes.Add(i);
+        }
+        isPrime = true;
       }
+      return primes;
     }
   }
 }
