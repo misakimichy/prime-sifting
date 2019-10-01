@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using PrimeSifting.Models;
 
 namespace PrimeSifting
@@ -10,8 +11,8 @@ namespace PrimeSifting
       Console.WriteLine("Welcome to Prime Number Sifting!");
       Console.WriteLine("We'll return all the prime numbers between two to the provided numbers.");
       int providedNumber = IsNumber();
-      var primes = Prime.GetPrimes(providedNumber);
-      var result = string.Join(",", primes);
+      List<int> primes = Prime.GetPrimes(providedNumber);
+      string result = string.Join(",", primes);
       Console.WriteLine($"Here are the prime numbers: {result}");
     }
 
