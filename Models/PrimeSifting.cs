@@ -6,14 +6,14 @@ namespace PrimeSifting.Models
   {
     public static List<int> GetPrimes(int number)
     {
-      // loop through each numbers in the list, adding each prime number to Primes
+      // loop through each numbers in the list, add prime number to the list, primes.
       List<int> primes = new List<int>();
       bool isPrime = true;
-      for(int i = 2; i <= number; i++)
+      for (int i = 2; i <= number; i++)
       {
         for (int j = 2; j <= number; j++)
         {
-          if ( i != j && i % j == 0)
+          if (i != j && i % j == 0)
           {
             isPrime = false;
             break;

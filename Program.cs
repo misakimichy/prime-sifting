@@ -20,8 +20,11 @@ namespace PrimeSifting
     {
       int number = 0;
       Console.WriteLine("Please enter a positive whole number bigger than 1.");
+      Console.ResetColor();
+      // Convert string to number
       bool userInput = Int32.TryParse(Console.ReadLine(), out number);
-      if(!userInput)
+      Console.ForegroundColor = ConsoleColor.Red;
+      if (!userInput)
       {
         Console.WriteLine("\nWe only accept a number.");
         return IsNumber();
